@@ -9,7 +9,7 @@
     <ImageView
         android:id="@+id/Header"
         android:layout_width="match_parent"
-        android:layout_height="250px"
+        android:layout_height="125dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,6 +22,7 @@
         android:layout_height="642dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        android:backgroundTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Header"
@@ -32,10 +33,13 @@
         android:id="@+id/backgroundMenu"
         android:layout_width="689dp"
         android:layout_height="643dp"
+        android:layout_below="@+id/Header"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
         android:layout_marginBottom="0dp"
+        android:background="#F4FFEA"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Header"
@@ -46,31 +50,17 @@
         android:id="@+id/DetailOrderText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/BackgroundOrder"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="160dp"
-        android:layout_marginEnd="105dp"
+        android:layout_marginStart="69dp"
+        android:layout_marginTop="168dp"
+        android:layout_marginEnd="63dp"
         android:fontFamily="@font/chivo"
-        android:text="Order Details"
-        android:textSize="18sp"
+        android:textColor="#000000"
+        android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/BackgroundOrder"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="@+id/BackgroundOrder"
-        app:layout_constraintTop_toTopOf="@+id/BackgroundOrder" />
-
-    <TextView
-        android:id="@+id/detailOrder2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="416dp"
-        android:layout_marginEnd="651dp"
-        android:fontFamily="@font/chivo"
         android:text="Order Details"
-        android:textSize="18sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/BackgroundOrder"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="@+id/BackgroundOrder"
@@ -87,16 +77,333 @@
 
     <Button
         android:id="@+id/buttonTrash"
-        android:layout_width="57dp"
-        android:layout_height="49dp"
-        android:layout_alignParentStart="true"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_alignStart="@+id/BackgroundOrder"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="700dp"
-        android:layout_marginBottom="9dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
         android:background="#F19696"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/BackgroundOrder"
         app:layout_constraintHorizontal_bias="0.107"
         app:layout_constraintStart_toStartOf="@+id/BackgroundOrder" />
+
+    <Button
+        android:id="@+id/buttonTrash1"
+        android:layout_width="44dp"
+        android:layout_height="43dp"
+        android:layout_alignStart="@+id/BackgroundOrder"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/delete"
+        android:backgroundTint="#FAFAFA"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/BackgroundOrder"
+        app:layout_constraintHorizontal_bias="0.107"
+        app:layout_constraintStart_toStartOf="@+id/BackgroundOrder" />
+
+    <Button
+        android:id="@+id/buttonKonfirmasi"
+        android:layout_width="244dp"
+        android:layout_height="55dp"
+        android:layout_alignStart="@+id/BackgroundOrder"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="77dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/colorAccent"
+        android:text="Konfirmasi Pembayaran"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/BackgroundOrder"
+        app:layout_constraintHorizontal_bias="0.107"
+        app:layout_constraintStart_toStartOf="@+id/BackgroundOrder" />
+
+    <TextView
+        android:id="@+id/titleHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="392dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="391dp"
+        android:fontFamily="@font/galada"
+        android:text="Kasir JeTa"
+        android:textColor="#FFFFFF"
+        android:textSize="56sp" />
+
+    <ScrollView
+        android:id="@+id/scrollMenu"
+        android:layout_width="648dp"
+        android:layout_height="600dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="147dp"
+        android:background="#00FFFFFF">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutVertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/menuMakananText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Makanan"
+                android:textSize="24sp"
+                android:fontFamily="@font/chivo"
+                android:textColor="#000000"
+                >
+            </TextView>
+            <LinearLayout
+                android:id="@+id/linearLayoutHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/buttonGadoGado"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_alignStart="@+id/linearLayout"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#FFFFFF"
+                    android:text="GADO-GADO"
+                    android:textSize="22sp"/>
+                <Button
+                    android:id="@+id/buttonSalad"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_alignStart="@+id/buttonGadoGado"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#FFFFFF"
+                    android:text="MIXED SALAD"
+                    android:textSize="22sp"/>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/menuTambahanText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tambahan"
+                android:textSize="24sp"
+                android:fontFamily="@font/chivo"
+                android:textColor="#000000"
+                >
+            </TextView>
+            <LinearLayout
+                android:id="@+id/linearLayoutHorizontal2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/buttonDressingGadoGado"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_alignStart="@+id/linearLayoutHorizontal2"
+                    android:layout_alignBottom="@+id/linearLayoutHorizontal2"
+                    android:layout_marginStart="20dp"
+                    android:background="#FFFFFF"
+                    android:text="DRESSING GADO-GADO"
+                    android:textSize="22sp"/>
+                <Button
+                    android:id="@+id/buttonSmokeBeef"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_alignStart="@+id/buttonDressingGadoGado"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginVertical="12.5dp"
+                    android:background="#FFFFFF"
+                    android:text="SMOKE BEEF"
+                    android:textSize="22sp"/>
+                <Button
+                    android:id="@+id/buttonDressingSalad"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_alignStart="@+id/buttonSmokeBeef"
+                    android:layout_marginStart="25dp"
+                    android:background="#FFFFFF"
+                    android:text="DRESSING SALAD"
+                    android:textSize="22sp"/>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/menuMinumanText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Minuman"
+                android:textSize="24dp"
+                android:fontFamily="@font/chivo"
+                android:textColor="#000000"
+                >
+            </TextView>
+            <LinearLayout
+                android:id="@+id/linearLayoutHorizontal3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/buttonTehManis"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_alignStart="@+id/linearLayout"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#FFFFFF"
+                    android:text="TEH MANIS"
+                    android:textSize="22sp"/>
+                <Button
+                    android:id="@+id/buttonTehTawar"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_alignStart="@+id/buttonGadoGado"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#FFFFFF"
+                    android:text="TEH TAWAR"
+                    android:textSize="22sp"/>
+                <Button
+                    android:id="@+id/buttonJeruk"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_alignStart="@+id/buttonGadoGado"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#FFFFFF"
+                    android:text="JERUK"
+                    android:textSize="22sp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linearLayoutHorizontal4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/buttonJerukMurni"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_alignStart="@+id/linearLayout"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#FFFFFF"
+                    android:text="JERUK MURNI"
+                    android:textSize="22sp"/>
+                <Button
+                    android:id="@+id/buttonCampur"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_alignStart="@+id/buttonGadoGado"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#FFFFFF"
+                    android:text="ES CAMPUR"
+                    android:textSize="22sp"/>
+                <Button
+                    android:id="@+id/buttonCendol"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_alignStart="@+id/buttonGadoGado"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#FFFFFF"
+                    android:text="ES CENDOL"
+                    android:textSize="22sp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linearLayoutHorizontal5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/buttonKacangIjo"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_alignStart="@+id/linearLayout"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="25dp"
+                    android:background="#FFFFFF"
+                    android:text="ES KACANG IJO"
+                    android:textSize="22sp"/>
+                <Button
+                    android:id="@+id/buttonKacangMalaka"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_alignStart="@+id/buttonGadoGado"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="25dp"
+                    android:background="#FFFFFF"
+                    android:text="ES KACANG MALAKA"
+                    android:textSize="22sp"/>
+                <Button
+                    android:id="@+id/buttonFreshJuice"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_alignStart="@+id/linearLayout"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#FFFFFF"
+                    android:text="FRESH JUICE"
+                    android:textSize="22sp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linearLayoutHorizontal6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/buttonMixJuices"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_alignStart="@+id/buttonGadoGado"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#FFFFFF"
+                    android:text="MIX JUICES"
+                    android:textSize="22sp"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="296dp"
+        android:layout_height="0dp"
+        android:layout_above="@id/buttonKonfirmasi"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="221dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="16dp"/>
 
 </RelativeLayout>
