@@ -73,14 +73,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun addItem(food: String) {
         when (food) {
-            //makanan
             "Gado-Gado" -> {
                 makanans.add(Makanan("Gado-gado", 20000))
             }
             "Salad" -> {
                 makanans.add(Makanan("Mixed Salad", 20000))
             }
-            //tambahan
             "Dressing GG" -> {
                 makanans.add(Makanan("Dressing Gado-Gado", 3000))
             }
