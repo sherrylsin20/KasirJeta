@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Cashier</string>
+    <string name="clear_order_items">Clear Order items</string>
 </resources>

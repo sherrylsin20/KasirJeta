@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        recyclerView.apply {
+        orderItems.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = this@MainActivity.adapter
         }
@@ -63,10 +63,7 @@ class MainActivity : AppCompatActivity() {
         buttonMixJuices.setOnClickListener {
             addItem("Mix Juices")
         }
-        buttonTrash1.setOnClickListener{
-            clearList()
-        }
-        buttonTrash.setOnClickListener{
+        cancelButton.setOnClickListener{
             clearList()
         }
     }
@@ -124,7 +121,7 @@ class MainActivity : AppCompatActivity() {
     }
     private fun clearList(){
         makanans.clear()
-        recyclerView?.adapter?.notifyDataSetChanged()
+        orderItems?.adapter?.notifyDataSetChanged()
     }
 
 }

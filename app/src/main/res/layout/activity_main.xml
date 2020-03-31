@@ -1,440 +1,497 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
 
-    <ImageView
-        android:id="@+id/Header"
+    <RelativeLayout
+        android:id="@+id/header"
         android:layout_width="match_parent"
-        android:layout_height="125dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@color/colorAccent" />
-
-    <ImageView
-        android:id="@+id/BackgroundOrder"
-        android:layout_width="335dp"
-        android:layout_height="642dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:backgroundTint="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Header"
-        app:layout_constraintVertical_bias="0.0"
-        tools:srcCompat="#FFFFFF" />
-
-    <ImageView
-        android:id="@+id/backgroundMenu"
-        android:layout_width="689dp"
-        android:layout_height="643dp"
-        android:layout_below="@+id/Header"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginBottom="0dp"
-        android:background="#F4FFEA"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Header"
-        app:layout_constraintVertical_bias="0.0"
-        tools:srcCompat="#F4FFEA" />
-
-    <TextView
-        android:id="@+id/DetailOrderText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/BackgroundOrder"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="69dp"
-        android:layout_marginTop="168dp"
-        android:layout_marginEnd="63dp"
-        android:fontFamily="@font/chivo"
-        android:text="Order Details"
-        android:textColor="#000000"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/BackgroundOrder"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="@+id/BackgroundOrder"
-        app:layout_constraintTop_toTopOf="@+id/BackgroundOrder" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="224dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/BackgroundOrder"
-        tools:layout_editor_absoluteY="178dp"
-        tools:srcCompat="@android:color/background_dark" />
-
-    <Button
-        android:id="@+id/buttonTrash"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        android:layout_alignStart="@+id/BackgroundOrder"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginBottom="10dp"
-        android:background="#F19696"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/BackgroundOrder"
-        app:layout_constraintHorizontal_bias="0.107"
-        app:layout_constraintStart_toStartOf="@+id/BackgroundOrder" />
-
-    <Button
-        android:id="@+id/buttonTrash1"
-        android:layout_width="44dp"
-        android:layout_height="43dp"
-        android:layout_alignStart="@+id/BackgroundOrder"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="15dp"
-        android:background="@drawable/delete"
-        android:backgroundTint="#FAFAFA"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/BackgroundOrder"
-        app:layout_constraintHorizontal_bias="0.107"
-        app:layout_constraintStart_toStartOf="@+id/BackgroundOrder" />
-
-    <Button
-        android:id="@+id/buttonKonfirmasi"
-        android:layout_width="244dp"
-        android:layout_height="55dp"
-        android:layout_alignStart="@+id/BackgroundOrder"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="77dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_height="100dp"
+        android:gravity="center"
         android:background="@color/colorAccent"
-        android:text="Konfirmasi Pembayaran"
-        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/body"
+        >
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/galada"
+            android:text="Kasir JeTa"
+            android:textColor="#FFFFFF"
+            android:textSize="56sp"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/body"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/header"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/BackgroundOrder"
-        app:layout_constraintHorizontal_bias="0.107"
-        app:layout_constraintStart_toStartOf="@+id/BackgroundOrder" />
-
-    <TextView
-        android:id="@+id/titleHeader"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="392dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="391dp"
-        android:fontFamily="@font/galada"
-        android:text="Kasir JeTa"
-        android:textColor="#FFFFFF"
-        android:textSize="56sp" />
-
-    <ScrollView
-        android:id="@+id/scrollMenu"
-        android:layout_width="648dp"
-        android:layout_height="600dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="147dp"
-        android:background="#00FFFFFF">
+        android:background="#EEE"
+        >
 
         <LinearLayout
-            android:id="@+id/linearLayoutVertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:id="@+id/order"
+            android:layout_width="360dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:padding="10dp"
+            android:orientation="vertical"
+            >
 
-            <TextView
-                android:id="@+id/menuMakananText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/chivo"
-                android:text="Makanan"
-                android:textColor="#000000"
-                android:textSize="24sp"></TextView>
-
-            <LinearLayout
-                android:id="@+id/linearLayoutHorizontal"
+            <RelativeLayout
+                android:id="@+id/orderHeader"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_height="70dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="center"
+                android:background="#FFF"
+                >
 
-                <Button
-                    android:id="@+id/buttonGadoGado"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_alignStart="@+id/linearLayout"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:background="#FFFFFF"
-                    android:text="GADO-GADO"
-                    android:textSize="22sp" />
+                <TextView
+                    android:id="@+id/orderTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Order Detail"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    />
 
-                <Button
-                    android:id="@+id/buttonSalad"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_alignStart="@+id/buttonGadoGado"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:background="#FFFFFF"
-                    android:text="MIXED SALAD"
-                    android:textSize="22sp" />
-            </LinearLayout>
+            </RelativeLayout>
 
-            <TextView
-                android:id="@+id/menuTambahanText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/chivo"
-                android:text="Tambahan"
-                android:textColor="#000000"
-                android:textSize="24sp"></TextView>
-
-            <LinearLayout
-                android:id="@+id/linearLayoutHorizontal2"
+            <RelativeLayout
+                android:id="@+id/orderBody"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                >
 
-                <Button
-                    android:id="@+id/buttonDressingGadoGado"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_alignStart="@+id/linearLayoutHorizontal2"
-                    android:layout_alignBottom="@+id/linearLayoutHorizontal2"
-                    android:layout_marginStart="20dp"
-                    android:background="#FFFFFF"
-                    android:text="DRESSING GADO-GADO"
-                    android:textSize="22sp" />
+                <RelativeLayout
+                    android:id="@+id/orderDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_above="@+id/confirmButton"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginBottom="5dp"
+                    android:background="#FFF"
+                    >
 
-                <Button
-                    android:id="@+id/buttonSmokeBeef"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_alignStart="@+id/buttonDressingGadoGado"
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/orderItems"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_above="@+id/orderTotal"
+                        android:layout_alignParentTop="true"
+                        tools:listitem="@layout/item_pesanan"
+                        />
+
+                    <LinearLayout
+                        android:id="@+id/orderTotal"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_alignParentBottom="true"
+                        android:orientation="vertical"
+                        >
+
+                        <View
+                            android:id="@+id/LineDivider"
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:background="@color/colorAccent"
+                            />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:layout_marginHorizontal="10dp"
+                            >
+
+                            <TextView
+                                android:id="@+id/itemMakananText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:text="Total"
+                                />
+
+                            <TextView
+                                android:id="@+id/hargaMakananText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="end"
+                                android:textSize="32sp"
+                                android:textStyle="bold"
+                                tools:text="Harga"
+                                />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/confirmButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
                     android:layout_alignParentBottom="true"
-                    android:layout_marginVertical="12.5dp"
-                    android:layout_marginStart="25dp"
-                    android:background="#FFFFFF"
-                    android:text="SMOKE BEEF"
-                    android:textSize="22sp" />
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    >
 
-                <Button
-                    android:id="@+id/buttonDressingSalad"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_alignStart="@+id/buttonSmokeBeef"
-                    android:layout_marginStart="25dp"
-                    android:background="#FFFFFF"
-                    android:text="DRESSING SALAD"
-                    android:textSize="22sp" />
-            </LinearLayout>
+                    <ImageButton
+                        android:id="@+id/cancelButton"
+                        android:layout_width="70dp"
+                        android:layout_height="match_parent"
+                        android:background="#FF6565"
+                        android:layout_marginEnd="5dp"
+                        android:src="@drawable/clear"
+                        android:scaleType="fitCenter"
+                        android:padding="10dp"
+                        android:contentDescription="@string/clear_order_items"
+                        />
 
-            <TextView
-                android:id="@+id/menuMinumanText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/chivo"
-                android:text="Minuman"
-                android:textColor="#000000"
-                android:textSize="24dp"></TextView>
+                    <LinearLayout
+                        android:id="@+id/proceedButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="10dp"
+                        android:background="@color/colorAccent"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        >
 
-            <LinearLayout
-                android:id="@+id/linearLayoutHorizontal3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/check"
+                            android:layout_marginEnd="10dp"
+                            />
 
-                <Button
-                    android:id="@+id/buttonTehManis"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_alignStart="@+id/linearLayout"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:background="#FFFFFF"
-                    android:text="TEH MANIS"
-                    android:textSize="22sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Selesai"
+                            android:textColor="#FFF"
+                            android:textSize="32sp"
+                            />
 
-                <Button
-                    android:id="@+id/buttonTehTawar"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_alignStart="@+id/buttonGadoGado"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:background="#FFFFFF"
-                    android:text="TEH TAWAR"
-                    android:textSize="22sp" />
+                    </LinearLayout>
 
-                <Button
-                    android:id="@+id/buttonJeruk"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_alignStart="@+id/buttonGadoGado"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:background="#FFFFFF"
-                    android:text="JERUK"
-                    android:textSize="22sp" />
-            </LinearLayout>
+                </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/linearLayoutHorizontal4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+            </RelativeLayout>
 
-                <Button
-                    android:id="@+id/buttonJerukMurni"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_alignStart="@+id/linearLayout"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:background="#FFFFFF"
-                    android:text="JERUK MURNI"
-                    android:textSize="22sp" />
-
-                <Button
-                    android:id="@+id/buttonCampur"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_alignStart="@+id/buttonGadoGado"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:background="#FFFFFF"
-                    android:text="ES CAMPUR"
-                    android:textSize="22sp" />
-
-                <Button
-                    android:id="@+id/buttonCendol"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_alignStart="@+id/buttonGadoGado"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:background="#FFFFFF"
-                    android:text="ES CENDOL"
-                    android:textSize="22sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/linearLayoutHorizontal5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/buttonKacangIjo"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_alignStart="@+id/linearLayout"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="25dp"
-                    android:background="#FFFFFF"
-                    android:text="ES KACANG IJO"
-                    android:textSize="22sp" />
-
-                <Button
-                    android:id="@+id/buttonKacangMalaka"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_alignStart="@+id/buttonGadoGado"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="25dp"
-                    android:background="#FFFFFF"
-                    android:text="ES KACANG MALAKA"
-                    android:textSize="22sp" />
-
-                <Button
-                    android:id="@+id/buttonFreshJuice"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_alignStart="@+id/linearLayout"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:background="#FFFFFF"
-                    android:text="FRESH JUICE"
-                    android:textSize="22sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/linearLayoutHorizontal6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/buttonMixJuices"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_alignStart="@+id/buttonGadoGado"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:background="#FFFFFF"
-                    android:text="MIX JUICES"
-                    android:textSize="22sp" />
-
-            </LinearLayout>
         </LinearLayout>
-    </ScrollView>
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="296dp"
-        android:layout_height="0dp"
-        android:layout_above="@id/buttonKonfirmasi"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="221dp"
-        android:layout_marginEnd="19dp"
-        android:layout_marginBottom="75dp" />
 
-    <TextView
-        android:id="@+id/totalTextView"
-        android:layout_width="89dp"
-        android:layout_height="30dp"
-        android:layout_alignStart="@+id/BackgroundOrder"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="19dp"
-        android:layout_marginEnd="227dp"
-        android:layout_marginBottom="87dp"
-        android:text="TOTAL :"
-        android:fontFamily="@font/chivo"
-        android:textStyle="bold"
-        android:textSize="22sp" />
+        <LinearLayout
+            android:id="@+id/menu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toStartOf="@id/order"
+            android:layout_alignParentStart="true"
+            android:orientation="vertical"
+            android:layout_margin="10dp"
+            android:background="#FFF"
+            >
 
-</RelativeLayout>
+            <ScrollView
+                android:id="@+id/scrollMenu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutVertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/menuMakananText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/chivo"
+                        android:text="Makanan"
+                        android:textColor="#595959"
+                        android:textSize="20sp"
+                        />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        >
+
+                        <Button
+                            android:id="@+id/buttonGadoGado"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_marginEnd="5dp"
+                            android:padding="5dp"
+                            android:background="@drawable/round_white_button_dropdown_shadow"
+                            android:text="GADO-GADO"
+                            android:textSize="22sp"
+                            />
+
+                        <Button
+                            android:id="@+id/buttonSalad"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_marginStart="5dp"
+                            android:padding="5dp"
+                            android:background="@drawable/round_white_button_dropdown_shadow"
+                            android:text="MIXED SALAD"
+                            android:textSize="22sp"
+                            />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/menuTambahanText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/chivo"
+                        android:text="Tambahan"
+                        android:textColor="#595959"
+                        android:textSize="20sp"
+                        />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutHorizontal2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        >
+
+                        <Button
+                            android:id="@+id/buttonDressingGadoGado"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:padding="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:background="@drawable/round_white_button_dropdown_shadow"
+                            android:text="DRESSING GADO-GADO"
+                            android:textSize="22sp"
+                            />
+
+                        <Button
+                            android:id="@+id/buttonSmokeBeef"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:padding="5dp"
+                            android:layout_marginHorizontal="5dp"
+                            android:background="@drawable/round_white_button_dropdown_shadow"
+                            android:text="SMOKE BEEF"
+                            android:textSize="22sp"
+                            />
+
+                        <Button
+                            android:id="@+id/buttonDressingSalad"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:padding="5dp"
+                            android:layout_marginStart="5dp"
+                            android:background="@drawable/round_white_button_dropdown_shadow"
+                            android:text="DRESSING SALAD"
+                            android:textSize="22sp"
+                            />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/menuMinumanText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/chivo"
+                        android:text="Minuman"
+                        android:textColor="#595959"
+                        android:textSize="20dp"
+                        />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutHorizontal3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="5dp"
+                        android:paddingHorizontal="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        >
+
+                        <Button
+                            android:id="@+id/buttonTehManis"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:padding="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:background="@drawable/round_white_button_dropdown_shadow"
+                            android:text="TEH MANIS"
+                            android:textSize="22sp"
+                            />
+
+                        <Button
+                            android:id="@+id/buttonTehTawar"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:padding="5dp"
+                            android:layout_marginHorizontal="5dp"
+                            android:background="@drawable/round_white_button_dropdown_shadow"
+                            android:text="TEH TAWAR"
+                            android:textSize="22sp"
+                            />
+
+                        <Button
+                            android:id="@+id/buttonJeruk"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:padding="5dp"
+                            android:layout_marginStart="5dp"
+                            android:background="@drawable/round_white_button_dropdown_shadow"
+                            android:text="JERUK"
+                            android:textSize="22sp"
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutHorizontal4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="10dp"
+                        android:paddingHorizontal="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        >
+
+                        <Button
+                            android:id="@+id/buttonJerukMurni"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:padding="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:background="@drawable/round_white_button_dropdown_shadow"
+                            android:text="JERUK MURNI"
+                            android:textSize="22sp"
+                            />
+
+                        <Button
+                            android:id="@+id/buttonCampur"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:padding="5dp"
+                            android:layout_marginHorizontal="5dp"
+                            android:background="@drawable/round_white_button_dropdown_shadow"
+                            android:text="ES CAMPUR"
+                            android:textSize="22sp"
+                            />
+
+                        <Button
+                            android:id="@+id/buttonCendol"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:padding="5dp"
+                            android:layout_marginStart="5dp"
+                            android:background="@drawable/round_white_button_dropdown_shadow"
+                            android:text="ES CENDOL"
+                            android:textSize="22sp"
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutHorizontal5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="10dp"
+                        android:paddingHorizontal="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        >
+
+                        <Button
+                            android:id="@+id/buttonKacangIjo"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:padding="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:background="@drawable/round_white_button_dropdown_shadow"
+                            android:text="ES KACANG IJO"
+                            android:textSize="22sp"
+                            />
+
+                        <Button
+                            android:id="@+id/buttonKacangMalaka"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:padding="5dp"
+                            android:layout_marginHorizontal="5dp"
+                            android:background="@drawable/round_white_button_dropdown_shadow"
+                            android:text="ES KACANG MALAKA"
+                            android:textSize="22sp"
+                            />
+
+                        <Button
+                            android:id="@+id/buttonFreshJuice"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:padding="5dp"
+                            android:layout_marginStart="5dp"
+                            android:background="@drawable/round_white_button_dropdown_shadow"
+                            android:text="FRESH JUICE"
+                            android:textSize="22sp"
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutHorizontal6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="10dp"
+                        android:paddingHorizontal="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        >
+
+                        <Button
+                            android:id="@+id/buttonMixJuices"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:padding="5dp"
+                            android:background="@drawable/round_white_button_dropdown_shadow"
+                            android:text="MIX JUICES"
+                            android:textSize="22sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
