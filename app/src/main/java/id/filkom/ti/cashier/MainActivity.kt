@@ -138,6 +138,8 @@ class MainActivity : AppCompatActivity() {
     }
     private fun clearList(){
         makanans.clear()
+        totalHarga = 0
+        orderTotalNumeric.text = "0"
         orderItems?.adapter?.notifyDataSetChanged()
     }
 
